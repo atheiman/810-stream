@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sports Radio 810 WHB</title>
+  <link rel="icon" href="sports-radio-810-whb.png">
+
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+</head>
+
+<body ng-controller="streamCtrl">
+<div class="container text-center">
+  <img src="sports-radio-810-whb.png" class="img-responsive center-block">
+
+  <div class="row">
+    <div class="col-xs-3">
+      <button class="btn btn-lg btn-primary glyphicon glyphicon-pause"
+              onclick="playPause()" id="playPauseBtn" />
+    </div>
+    <div class="col-xs-3">
+      <button class="btn btn-lg btn-primary glyphicon glyphicon-volume-down"
+              onclick="changeVol('down')" />
+    </div>
+    <div class="col-xs-3">
+      <button class="btn btn-lg btn-primary glyphicon glyphicon-volume-up"
+              onclick="changeVol('up')" />
+    </div>
+    <div class="col-xs-3">
+      <button class="btn btn-lg btn-primary glyphicon glyphicon-volume-off"
+              onclick="mute()" />
+    </div>
+  </div> <!-- /.row -->
+
+  <hr/>
+
+  <p><audio controls autoplay onplay="setPlayPauseIcon()" onpause="setPlayPauseIcon()"
+            src="http://2503.live.streamtheworld.com:443/WHBAM_SC">
+  </audio></p>
+</div> <!-- /.container -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="audio.js"></script>
+</body>
+</html>
