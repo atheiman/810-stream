@@ -11,15 +11,18 @@
         href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel="stylesheet"
         href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+  <style>
+  .red {color: red;}
+  </style>
 </head>
 
-<body ng-controller="streamCtrl">
+<body>
 <div class="container text-center">
   <img src="sports-radio-810-whb.png" class="img-responsive center-block">
 
   <div class="row">
     <div class="col-md-1 col-md-offset-4 col-xs-2 col-xs-offset-2">
-      <button class="btn btn-lg btn-primary glyphicon glyphicon-pause"
+      <button class="btn btn-lg btn-warning glyphicon glyphicon-pause"
               onclick="playPause()" id="playPauseBtn" />
     </div>
     <div class="col-md-1 col-xs-2">
@@ -31,7 +34,7 @@
               onclick="changeVol('up')" />
     </div>
     <div class="col-md-1 col-xs-2">
-      <button class="btn btn-lg btn-primary glyphicon glyphicon-volume-off"
+      <button class="btn btn-lg btn-danger glyphicon glyphicon-volume-off"
               onclick="mute()" />
     </div>
   </div> <!-- /.row -->
@@ -41,6 +44,7 @@
   <p><audio controls autoplay onplay="setPlayPauseIcon()" onpause="setPlayPauseIcon()"
             src="http://2503.live.streamtheworld.com:443/WHBAM_SC">
   </audio></p>
+  <p id="errorMsg"><a class="red" href=".">Error playing content - reload the page?</a></p>
 </div> <!-- /.container -->
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
